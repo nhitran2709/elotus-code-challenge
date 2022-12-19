@@ -17,13 +17,13 @@ const items = new Array(3).fill(null).map((labelName, i) => {
 });
 
 const MovieTabBarLayout = () => (
-  <div className="movie-tabbar-layout card-container">
+  <section className="movie-tabbar-layout card-container">
     <Tabs
       className='movie-tabbar'
       type="card"
       items={items}
     />
-  </div>
+  </section>
 );
 
 export default MovieTabBarLayout;

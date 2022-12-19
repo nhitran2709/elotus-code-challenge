@@ -1,7 +1,7 @@
-.movie-tabbar-layout {
+.movie-tabbar-layout .movie-tabbar {
   width: 100%;
   height: auto;
-
+  
   background-color: rgba(0, 0, 0, 0.02);
 }
 
