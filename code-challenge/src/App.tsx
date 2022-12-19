@@ -1,9 +1,10 @@
 import React from 'react';
+import HomeScreen from './screens/Homepage';
 
 const App = () => {
   return (
     <div className="App">
-      Movie App
+      <HomeScreen />
     </div>
   );
 }

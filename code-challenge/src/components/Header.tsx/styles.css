@@ -1,0 +1,29 @@
+.main-header {
+  width: 100%;
+  height: 300px;
+
+  margin-top: -25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../../assets/images/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  color: #ffffff;
+}
+
+.main-logo {
+  margin: 0;
+  font-size: 60px;
+  text-shadow: 5px 7px rgb(92, 36, 36);
+}
+
+.main-slogan {
+  font-size: 24px;
+}
