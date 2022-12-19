@@ -1,11 +1,18 @@
 .movie-tabbar-layout .movie-tabbar {
   width: 100%;
   height: auto;
-  
+
   background-color: rgba(0, 0, 0, 0.02);
 }
 
 .movie-tabbar {
   background-color: #ffffff;
   padding: 50px;
+}
+
+.movie-thumbnail-list {
+  display: flex;
+  justify-content: space-around;
+
+  margin: 20px 0;
 }
