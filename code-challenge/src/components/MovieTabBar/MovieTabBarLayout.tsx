@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tabs } from 'antd';
 
 import './styles.css';
-import MovieThumbnail from '../MovieThumbnail';
+import { useSelector } from 'react-redux';
+import { MovieListDataType } from '../../models/movieListTypes';
+import MovieThumbnailList from '../MovieThumbnail/MovieThumbnailList';
+import ModalInfo from '../ModalInfo';
 
-const items = new Array(3).fill(null).map((labelName, i) => {
-  const id = String(i + 1);
+const MovieTabBarLayout = () => {
+  const { movies } = useSelector((state: MovieListDataType) => state);
 
-  return {
-    label: `${labelName} Movies`,
-    key: id,
-    children: (
-      <div className='movie-thumbnail-list'>
-        <MovieThumbnail altImg='movie' imgUrl='/' movieName='Avatar' description='Info' />
-        <MovieThumbnail altImg='movie' imgUrl='/' movieName='Avatar' description='Info' />
-        <MovieThumbnail altImg='movie' imgUrl='/' movieName='Avatar' description='Info' />
-        <MovieThumbnail altImg='movie' imgUrl='/' movieName='Avatar' description='Info' />
-      </div>
-    ),
-  };
-});
+  const [isDetailMovieModal, setIsDetailMovieModal] = useState(false);
 
-const MovieTabBarLayout = () => (
-  <section className="movie-tabbar-layout card-container">
-    <Tabs
-      className='movie-tabbar'
-      type="card"
-      items={items}
-    />
-  </section>
-);
+  const { movieList } = movies;
+
+  const items = new Array(3).fill(null).map((labelName, i) => {
+    const id = String(i + 1);
+
+    return {
+      label: `Popular Movies`,
+      key: id,
+      children: (
+        <MovieThumbnailList movieList={movieList} setIsDetailMovieModal={setIsDetailMovieModal} />
+      ),
+    };
+  });
+
+  return (
+    <section className="movie-tabbar-layout card-container">
+      <ModalInfo isDetailMovieModal={isDetailMovieModal} setIsDetailMovieModal={setIsDetailMovieModal} />
+      <Tabs
+        className='movie-tabbar'
+        type="card"
+        items={items || []}
+      />
+    </section>
+  )
+};
 
 export default MovieTabBarLayout;
