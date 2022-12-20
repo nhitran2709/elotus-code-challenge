@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeScreen isLoading={isLoading} />
+      <HomeScreen isLoading={isLoading}/>
     </div>
   );
 }
