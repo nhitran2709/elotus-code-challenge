@@ -14,22 +14,36 @@ const MovieTabBarLayout = () => {
 
   const { movieList } = movies;
 
-  const items = new Array(3).fill(null).map((labelName, i) => {
-    const id = String(i + 1);
+  const handleOnChangeTabs = (key: string) => {
+    // Validate and handle fetch api equivalent with each key value
+    // switch (key) {
+    //   case 'Now Playing':
 
-    return {
-      label: `Popular Movies`,
-      key: id,
-      children: (
-        <MovieThumbnailList movieList={movieList} setIsDetailMovieModal={setIsDetailMovieModal} />
-      ),
-    };
-  });
+    //     break;
+    //   case 'Top Rate':
+
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+  }
+
+  const labelTabs = ['Popular', 'Now Playing', 'Top Rate']
+
+  const items = labelTabs.map((item: string) => ({
+    label: `${item} Movies`,
+    key: item,
+    children: (
+      <MovieThumbnailList movieList={movieList} setIsDetailMovieModal={setIsDetailMovieModal} />
+    ),
+  }));
 
   return (
     <section className="movie-tabbar-layout card-container">
       <ModalInfo isDetailMovieModal={isDetailMovieModal} setIsDetailMovieModal={setIsDetailMovieModal} />
       <Tabs
+        onChange={handleOnChangeTabs}
         className='movie-tabbar'
         type="card"
         items={items || []}
