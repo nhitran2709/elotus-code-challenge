@@ -7,7 +7,7 @@ import MovieTabBarLayout from "../components/MovieTabBar/MovieTabBarLayout";
 import SearchInput from "../components/SearchInput";
 
 interface Props {
-  isLoading: boolean
+  isLoading: boolean,
 }
 
 const HomeScreen = ({ isLoading }: Props) => {

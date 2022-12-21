@@ -16,6 +16,7 @@ const MovieThumbnailList = ({ movieList, setIsDetailMovieModal }: Props) => {
       {
         movieList?.results && movieList?.results?.map(({ id, title, poster_path, vote_average, release_date }) => (
           <MovieThumbnail
+            id={id}
             releaseDate={release_date}
             rating={vote_average}
             key={id}
