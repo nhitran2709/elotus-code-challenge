@@ -1,0 +1,12 @@
+.movie-card-info {
+  text-align: center;
+}
+
+.movie-release-date {
+  margin: 0;
+}
+
+.movie-general-info .ant-card-meta-title,
+.movie-release-date {
+  font-size: 20px;
+}

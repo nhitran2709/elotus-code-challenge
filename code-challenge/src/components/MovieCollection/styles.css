@@ -1,0 +1,11 @@
+.movie-collection {
+  color: #9a1200;
+  display: flex;
+  justify-content: center;
+
+  margin: 50px;
+
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
